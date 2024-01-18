@@ -1,0 +1,12 @@
+{% extends 'demo/base.html' %}
+{% load i18n %}
+{% block title %}Dashboard - Demo{% endblock %}
+
+{% block content %}
+{% include 'demo/render_alert_messages.html' %}
+<div class="be-content">
+    <div class="page-head">
+        <h2 class="page-head-title">{% trans 'DEMO' %}</h2>
+    </div>
+</div>
+{% endblock content %}

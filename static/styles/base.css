@@ -1,0 +1,215 @@
+.be-scroll-top {
+    z-index: 5001; /* 修改z-index讓Go top的按鈕不被WARNING蓋住 */
+}
+
+/* 調整 navbar 中 logo 區塊的寬度 */
+.be-top-header .be-navbar-header .navbar-brand {
+    width: 150px;
+}
+
+.pagination {
+    -webkit-box-pack: end !important;
+    justify-content: flex-end !important;
+    padding: 20px 15px 20px 15px;
+}
+
+.required-label:before {
+    content: '*';
+    color: #e76240 !important;
+    margin-right: 0.384615rem !important;
+}
+
+/*
+ * 讓 django-tables2 的可排序 header 顯示 sorting arrow
+ * sorting arrow style reference：https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js
+*/
+table.table thead th.orderable {
+    padding-right: 30px;
+    position: relative;
+}
+
+table.table thead th.orderable:before,
+table.table thead th.orderable:after {
+    position: absolute;
+    bottom: 0.6rem;
+    display: block;
+    opacity: 0.3;
+    font-size: 1.5rem;
+}
+
+table.table thead th.orderable:before {
+    right: 1em;
+    content: '\2191';
+}
+
+table.table thead th.orderable:after {
+    right: 0.5em;
+    content: '\2193';
+}
+
+table.table thead th.asc:before,
+table.table thead th.desc:after {
+    opacity: 1;
+}
+
+/* 覆蓋原生select2的css style */
+
+.select2-selection--multiple {
+    height: 30px !important;
+    padding: 0;
+    cursor: pointer !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b:after {
+    content: "";
+}
+
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:after{
+    content: "";
+}
+
+.select2-container .select2-selection--single {
+    height: 30px !important;
+    padding: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 30px !important;
+}
+
+.note-editor.note-frame {
+    border: 1px;
+}
+
+.w-230px {
+    box-sizing: content-box;
+    width: 230px !important;
+}
+
+.w-200px {
+    box-sizing: content-box;
+    width: 200px !important;
+}
+
+.w-170px {
+    box-sizing: content-box;
+    width: 170px !important;
+}
+
+.w-130px {
+    box-sizing: content-box;
+    width: 130px !important;
+}
+
+.w-60px {
+    box-sizing: content-box;
+    width: 60px !important;
+}
+
+.w-44px {
+    box-sizing: content-box;
+    width: 44px !important;
+}
+
+.w-100px {
+    box-sizing: content-box;
+    width: 100px !important;
+}
+
+.w-80px {
+    box-sizing: content-box;
+    width: 80px !important;
+}
+
+.w-35px {
+    box-sizing: content-box;
+    width: 35px !important;
+}
+
+/* 調整 multiselect 的長寬 */
+.ms-container {
+    width: 600px;
+}
+
+.ms-container .ms-list {
+    height: 300px;
+}
+
+/* 統一 multiselect 標題的樣式 */
+.custom-multiselect-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* 修改 Beagle alert 的樣式 */
+.alert-success {
+    background-color: #40C3AE;
+}
+.alert-danger {
+    background-color: #E76240;
+}
+.alert-a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* 加入 badge cancel 的樣式 */
+.badge-cancel {
+    color: white;
+    background-color: #8c8c8c;
+}
+
+/* 圖片相關的 css style */
+.img-upload-block {
+    background: #f6f5f7;
+    overflow: hidden;
+    width: 140px;
+    height: 140px;
+    border-radius: 3px;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.img-upload-block .btn-sm {
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    bottom: 10px;
+}
+
+/* 隱藏圖片欄位的 input element */
+.hide-text-input {
+    opacity: 0;
+    width: 0;
+}
+
+/* Redactor 用在新管理介面時需要設定的 style */
+.redactor-box {
+    max-width: none;
+    max-height: 500px;
+    float: none;
+}
+.redactor-layer{
+    max-height: 470px !important;
+}
+
+/* 讓 Beagle 的上傳檔案 HTML element 能正確顯示「請選擇檔案」的提示訊息 */
+.inputfile {
+    width: inherit;
+    height: inherit;
+    overflow: inherit;
+}
+
+/* 處理 dal 和 beagle 的 select2 css 衝突導致欄位的跑版 */
+.select2-container {
+    min-width: 0;
+}
+
+.inline-operate-anchor {
+    color: #404040;
+    font-size: 1.5rem;
+}

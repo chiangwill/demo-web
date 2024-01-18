@@ -1,0 +1,154 @@
+#nav-login-btn {
+    margin-right: 15px;
+}
+
+.progtrckr a {
+    color: white;
+}
+
+.progtrckr a:hover {
+    text-decoration: none;
+}
+
+.required-label:after {
+    content: ' *';
+}
+
+.track-move {
+    cursor: move;
+}
+
+#apply_to_all_performer {
+    margin-left: 10px;
+}
+
+#apply_to_all_performer_en {
+    margin-left: 10px;
+}
+
+ul.errorlist {
+    color: #a94442;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.error-msg {
+    color: #a94442;
+}
+
+.progress-audio-file {
+    margin-top: 10px;
+}
+
+.finish-info {
+    text-align: center;
+}
+
+.upload-track-help-text {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.popup-table {
+    margin-bottom: 0;
+}
+
+div.modal-content {
+    text-align: left;
+}
+
+#ui_notifIt {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    -wekbit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    top: 4px !important;
+    z-index: 2000;
+}
+
+#cropContainerEyecandy, .cropContainerEyecandy{ width:100%; height:200px; position: relative; border:1px solid #ccc;}
+
+.accept-block {
+    background: white;
+    border: 1px solid #999999;
+    padding: 0 0 0 20px;
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.container-fluid .breadcrumb {
+    padding-left: 13.5px;
+}
+
+.photo-block .photo-box {
+    line-height: 200px;
+}
+
+.p-top-23 {
+    padding-top: 23px !important;
+}
+
+.audio-preview-btn {
+    width: 50px;
+    margin-right: 0px;
+}
+
+.preview_file {
+    min-height: 30px;
+}
+
+.update_audio_file {
+    padding-top: 10px;
+}
+
+#demo_notice_label {
+    color: white;
+    background: #cc0000;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.withdraw_select, .withdraw_report_select {
+    margin-right: 10px;
+}
+
+#alert_placeholder {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#alert_placeholder div button {
+    margin-left: 10px;
+}
+
+form[name=query_conditions_form] {
+    float: left;
+}
+
+button[name=clear_query_conditions_button] {
+    float: left;
+    margin-left: 10px;
+}
+
+.break_word {
+    word-break: break-word;
+    white-space: normal;
+}
+
+.breadcrumb li {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+/* hide google recaptcha badge: https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed*/
+.grecaptcha-badge {
+    visibility: hidden;
+}

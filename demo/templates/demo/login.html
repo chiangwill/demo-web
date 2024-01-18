@@ -1,0 +1,54 @@
+{% load i18n static beagle %}
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% trans 'demo' %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="shortcut icon" href="{% static 'images/logo_200px.png' %}" /> -->
+    <link rel="stylesheet" href="{% static 'libs/beagle/perfect-scrollbar/css/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/material-design-icons/css/material-design-iconic-font.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/app.css' %}" />
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+</head>
+
+<body class="be-splash-screen">
+    <div class="be-wrapper be-login">
+        <div class="be-content">
+            <div class="main-content container-fluid">
+                {% include 'demo/render_form_non_field_errors.html' %}
+                <div class="splash-container">
+                    <div class="card card-border-color card-border-color-primary">
+                        <div class="card-header"><span class="splash-description">請輸入下列使用者資訊</span></div>
+                        <div class="card-body">
+                            <form method="POST" action="#">
+                                {% csrf_token %}
+                                {{ form|beagle }}
+                                <input type="hidden" name="next" value="{{ next }}" />
+                                <div class="form-group login-submit">
+                                    <button class="btn btn-primary btn-xl">登入</button>
+                                </div>
+                                <span>
+                                    還沒有帳號嗎？<a href="{% url 'demo:sign-up' %}">註冊</a>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'libs/beagle/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/perfect-scrollbar/js/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/app.js' %}"></script>
+    <script src="{% static 'libs/js-cookie/js.cookie.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+    <script src="{% static 'javascripts/base.js' %}"></script>
+
+</body>
+
+</html>

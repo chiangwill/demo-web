@@ -1,0 +1,35 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% trans 'demo' %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--<link rel="shortcut icon" href="{% static 'images/cropped-ico-packer.png' %}" />-->
+    <link rel="stylesheet" href="{% static 'libs/beagle/perfect-scrollbar/css/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/material-design-icons/css/material-design-iconic-font.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/app.css' %}" />
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+</head>
+
+<body>
+    <div id="burger" class="be-wrapper be-collapsible-sidebar">
+        {% include "demo/navbar.html" %}
+        {% include "demo/sidebar.html" %}
+        {% block content %} {% endblock %}
+    </div>
+
+    <script src="{% static 'libs/beagle/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/perfect-scrollbar/js/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/app.js' %}"></script>
+    <script src="{% static 'libs/js-cookie/js.cookie.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+    <script src="{% static 'javascripts/base.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

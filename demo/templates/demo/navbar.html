@@ -1,0 +1,31 @@
+{% load i18n %}
+<nav class="navbar navbar-expand fixed-top be-top-header">
+    <div class="container-fluid">
+        <div class="be-navbar-header">
+            <a class="be-toggle-left-sidebar" href="#">
+                <span class="icon mdi mdi-menu"></span>
+            </a>
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <div class="be-right-navbar">
+            <ul class="nav navbar-nav float-right be-user-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button"
+                        aria-expanded="false">
+                        <span class="badge badge-pill badge-success"></span>
+                        <!-- <span class="user-name">{{ request.user.username }}</span> -->
+                        <span class="user-name">{{ request.user.username }}</span>
+                        <i class="icon mdi mdi-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu" role="menu">
+                        <!--<a class="dropdown-item" href="#">{% trans "帳號設定" %}</a>-->
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <!-- <a class="dropdown-item" href="#">{% trans "change password" %}</a> -->
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="{% url 'logout' %}">{% trans "logout" %}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

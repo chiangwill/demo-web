@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  nginx:
+    container_name: demo-web-nginx
+    build: ./nginx
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/demo
+      - ./log:/var/log/nginx
+    depends_on:
+      - web
+
+  web:
+    container_name: demo-web
+    build: .
+    command: uwsgi --ini uwsgi.ini
+    volumes:
+      - .:/demo
+    restart: always

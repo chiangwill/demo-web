@@ -1,0 +1,83 @@
+{% load beagle i18n %}
+
+<div class="form-group" {% if field.field.widget.attrs.form_group_in_td %}style="margin-bottom: 0"{% endif %}>
+    {% if field.label and not field|is_checkbox_input %}
+        <label {% if field.field.required and field.form.required_css_class %}class="{{ field.form.required_css_class }}"{% endif %}>
+            {{ field.label }}
+            {% if 'tooltip' in field.field.widget.attrs %}
+                <span class="mdi mdi-help ml-1" data-toggle="tooltip" data-placement="right" data-container="body" data-original-title="{{ field.field.widget.attrs.tooltip }}"></span>
+            {% endif %}
+        </label>
+    {% endif %}
+
+    {% if field|is_radio %}
+        <div class="form-check pl-0 mb-0">
+            {% for radio in field %}
+                <label class="custom-control custom-radio custom-control-inline">
+                    {{ radio.tag }}<span class="custom-control-label">{{ radio.choice_label }}</span>
+                </label>
+            {% endfor %}
+        </div>
+    {% elif field|is_multiple_checkbox %}
+        <ul class="list-inline">
+            {% for checkbox in field %}
+                <li class="list-inline-item">
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-rounded btn-secondary {% if checkbox.data.attrs.checked %}active{% endif %} {% if checkbox.data.attrs.disabled %}disabled{% endif %}">
+                            {{ checkbox.tag }}{{ checkbox.choice_label }}
+                        </label>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif field|is_date %}
+        <span class="input-group date datetimepicker" data-min-view="2" data-date-format="yyyy-mm-dd">
+            <span class="input-group-append">
+                <button class="btn btn-secondary" {% if field.field.disabled %}disabled{% endif %}><i class="icon-th mdi mdi-calendar"></i></button>
+            </span>
+            {{ field }}
+        </span>
+    {% elif field|is_datetime %}
+        <span class="input-group date datetimepicker" data-min-view="0" data-date-format="yyyy-mm-dd hh:ii">
+            <span class="input-group-append">
+                <button class="btn btn-secondary" {% if field.field.disabled %}disabled{% endif %}><i class="icon-th mdi mdi-calendar"></i></button>
+            </span>
+            {{ field }}
+        </span>
+    {% elif field|is_checkbox_input %}
+        <ul class="list-inline">
+            {% for checkbox_input in field %}
+                <li class="list-inline-item">
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-rounded btn-secondary {% if checkbox_input.data.attrs.checked %}active{% endif %} {% if checkbox_input.data.attrs.disabled %}disabled{% endif %}">
+                            {{ checkbox_input }}{{ field.label }}
+                        </label>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+    {% elif field|is_file %}
+        <div>
+            {{ field }}
+            <label class="btn-secondary {% if field.field.disabled %}disabled{% endif %}" for="{{ field.id_for_label }}">
+                <i class="mdi mdi-upload"></i><span>{% trans '上傳檔案' %}</span>
+            </label>
+        </div>
+    {% else %}
+        {{ field }}
+    {% endif %}
+
+    {% if field.errors %}
+        <ul class="parsley-errors-list filled">
+            {% for error in field.errors %}
+                <li class="parsley-required">{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if field.help_text %}
+        <p class="form-text text-muted">
+            {{ field.help_text|safe }}
+        </p>
+    {% endif %}
+</div>
